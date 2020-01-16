@@ -1,0 +1,33 @@
+=======xmlΩÁ√Ê
+xmlns:viewModels="clr-namespace:MvvM.ViewModels" 
+
+<Window.DataContext>
+        <viewModels:MyModel/>
+</Window.DataContext>
+
+        <Button Grid.Row="0" Content="Button" Command="{Binding MyCommand}"/>
+        <TextBox  Grid.Row="1"  Name="TB" Text="{Binding TextVal}" ></TextBox>
+
+=======ViewModel¿‡
+    class MyModel : ViewModelBase
+    {
+        public RelayCommand MyCommand => new RelayCommand(fun);
+        int val = 0;
+        private void fun()
+        {
+            TextVal = val.ToString();
+            val++;
+        }
+
+        private string _TextVal = "abcde";
+        public string TextVal
+        {
+            get { return _TextVal; }
+            set
+            {
+                _TextVal = value;
+                RaisePropertyChanged("TextVal");
+            }
+        }
+
+    }

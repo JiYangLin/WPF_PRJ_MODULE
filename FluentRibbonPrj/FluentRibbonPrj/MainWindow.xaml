@@ -1,0 +1,102 @@
+﻿<Fluent:RibbonWindow x:Class="FluentRibbonPrj.MainWindow"
+        xmlns:Fluent="urn:fluent-ribbon"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FluentRibbonPrj"
+        mc:Ignorable="d"
+        Icon="mark.ico"  
+        WindowState="Maximized"
+        Title="" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+
+
+        
+        
+        <Fluent:Ribbon Grid.Row="0" Name="rib">
+
+            <Fluent:Ribbon.Menu>
+                <Fluent:Backstage Header="帮助">
+                    <Fluent:BackstageTabControl>
+                        <Fluent:BackstageTabItem Header="注意事项" KeyTip="T">
+                            <StackPanel Orientation="Vertical" Name="OptPanel">
+                                <Label  Foreground="White"  VerticalAlignment="Center" FontSize="20">操作说明。</Label>
+                                <Image x:Name="vaildOpt"  Loaded="VaildOpt_Loaded" Height="400"></Image>
+                            </StackPanel>
+                        </Fluent:BackstageTabItem>
+                        <Fluent:Button Header="关闭"/>
+                    </Fluent:BackstageTabControl>
+                </Fluent:Backstage>
+            </Fluent:Ribbon.Menu>
+
+            <Fluent:RibbonTabItem Header="菜单">
+                <Fluent:RibbonGroupBox Header="数据处理">
+                    <Fluent:Button  Header="打开工程"  Icon="icon/open.png" LargeIcon="icon/open.png" x:Name="StartPrj" Click="StartPrj_Click"/>
+                    <Fluent:Button  Header="参数设置" x:Name="setCol" Icon="icon/set.png" LargeIcon="icon/set.png" Click="SetCol_Click"/>
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+            
+            <Fluent:Ribbon.QuickAccessItems>
+                <Fluent:QuickAccessMenuItem IsChecked="True" Header="打开工程" Target="{Binding Source={x:Reference StartPrj}}" />
+            </Fluent:Ribbon.QuickAccessItems>
+            
+        </Fluent:Ribbon>
+
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+
+            
+            <DataGrid Name="SourceList"  Grid.Column="0" Grid.Row="1" ItemsSource="{Binding}"  IsReadOnly="True" CanUserAddRows="False"  AutoGenerateColumns="False"  HeadersVisibility="Column" Background="#363636" Foreground="White">
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Height" Value="25"></Setter>
+                            <Setter Property="BorderThickness" Value="1"></Setter>
+                            <Setter Property="BorderBrush">
+                                <Setter.Value>
+                                    <SolidColorBrush Color="Black"></SolidColorBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
+                    <DataGrid.RowStyle >
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="Background" Value="#FF363636"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="LightGreen"/>
+                                </Trigger>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Background" Value="DodgerBlue"/>
+                                    <Setter Property="Foreground" Value="BlueViolet"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGrid.RowStyle>
+                    <DataGrid.Resources>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="DodgerBlue"/>
+                    </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding name}" Header="姓名" Width="1*"/>
+                    <DataGridTextColumn Binding="{Binding age}" Header="年龄" Width="3*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            <RichTextBox  Grid.Column="1"  IsEnabled="False" IsReadOnly="True" Name="LoggerShowRB" Background="#2D2D2D"/>
+        </Grid>
+
+
+        <Fluent:StatusBar HorizontalAlignment="Stretch" Grid.Row="2" VerticalAlignment="Bottom">
+            <Fluent:StatusBarItem Title="说明" HorizontalAlignment="Right" Content="纪阳林 "/>
+        </Fluent:StatusBar>
+    </Grid>
+</Fluent:RibbonWindow>

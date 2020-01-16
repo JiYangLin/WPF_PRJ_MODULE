@@ -1,0 +1,37 @@
+=========消息定义  
+
+    public struct MessageData
+    {
+        public MessageData(MessageId id, object data = null)
+        {
+            Id = id;
+            Data = data;
+        }
+        public object Data;
+        public MessageId Id;
+    }
+
+    public enum MessageId
+    {
+        ShowData,
+    }
+
+
+========注册消息
+public MainWindow()
+{
+       InitializeComponent();
+       Messenger.Default.Register<MessageData>(this, OnMessageReceived);
+}
+private void OnMessageReceived(MessageData message)
+{
+       switch (message.Id)
+        {
+                case MessageId.ShowData:
+                    this.Dispatcher.Invoke(()=> { TB.Text = message.Data.ToString(); });                  
+                    break;
+        }
+}
+
+========发送消息
+Messenger.Default.Send<MessageData, MainWindow>(new MessageData(MessageId.ThrData, "xxxx"));
