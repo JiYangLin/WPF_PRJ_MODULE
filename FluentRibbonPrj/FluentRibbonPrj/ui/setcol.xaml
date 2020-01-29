@@ -32,8 +32,8 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Fluent:Button  Grid.Column="0" Header="确定" Name="setConfirm" Click="SetConfirm_Click"  LargeIcon="icon/confirm.png" ></Fluent:Button>
-            <Fluent:Button  Grid.Column="1" Header="取消" Name="cancel" Click="Cancel_Click"  LargeIcon="icon/delete.png" ></Fluent:Button>
+            <Fluent:Button  Grid.Column="0" Header="确定" Name="setConfirm" Click="SetConfirm_Click"  LargeIcon="/FluentRibbonPrj;component/Resource/confirm.png" ></Fluent:Button>
+            <Fluent:Button  Grid.Column="1" Header="取消" Name="cancel" Click="Cancel_Click"  LargeIcon="/FluentRibbonPrj;component/Resource/delete.png" ></Fluent:Button>
         </Grid>
         
 

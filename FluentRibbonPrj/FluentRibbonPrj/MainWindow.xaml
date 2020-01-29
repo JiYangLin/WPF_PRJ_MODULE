@@ -6,7 +6,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FluentRibbonPrj"
         mc:Ignorable="d"
-        Icon="mark.ico"  
+        Cursor="/FluentRibbonPrj;component/Resource/curFile.cur"
+        Icon="/FluentRibbonPrj;component/Resource/mark.ico"  
         WindowState="Maximized"
         Title="" Height="450" Width="800">
     <Grid>
@@ -37,8 +38,8 @@
 
             <Fluent:RibbonTabItem Header="菜单">
                 <Fluent:RibbonGroupBox Header="数据处理">
-                    <Fluent:Button  Header="打开工程"  Icon="icon/open.png" LargeIcon="icon/open.png" x:Name="StartPrj" Click="StartPrj_Click"/>
-                    <Fluent:Button  Header="参数设置" x:Name="setCol" Icon="icon/set.png" LargeIcon="icon/set.png" Click="SetCol_Click"/>
+                    <Fluent:Button  Header="打开工程"  Icon="/FluentRibbonPrj;component/Resource/open.png" LargeIcon="/FluentRibbonPrj;component/Resource/open.png" x:Name="StartPrj" Click="StartPrj_Click"/>
+                    <Fluent:Button  Header="参数设置" x:Name="setCol" Icon="/FluentRibbonPrj;component/Resource/set.png" LargeIcon="/FluentRibbonPrj;component/Resource/set.png" Click="SetCol_Click"/>
                 </Fluent:RibbonGroupBox>
             </Fluent:RibbonTabItem>
             

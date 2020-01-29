@@ -34,7 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>mark.ico</ApplicationIcon>
+    <ApplicationIcon>Resource\mark.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ControlzEx">
@@ -120,9 +120,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="cfg.ini">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="log4net.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -135,15 +132,24 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="mark.ico" />
+    <Resource Include="Resource\mark.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="curFile.cur">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <Resource Include="Resource\curFile.cur" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="embSource\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\confirm.png" />
+    <Resource Include="Resource\delete.png" />
+    <Resource Include="Resource\dir.png" />
+    <Resource Include="Resource\find.png" />
+    <Resource Include="Resource\hand.png" />
+    <Resource Include="Resource\open.png" />
+    <Resource Include="Resource\send.png" />
+    <Resource Include="Resource\ser.png" />
+    <Resource Include="Resource\set.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

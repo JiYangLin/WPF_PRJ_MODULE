@@ -32,12 +32,7 @@ namespace FluentRibbonPrj
             InitializeComponent();
             MyLogger.txtBox = LoggerShowRB;
 
-            Cursor cur = new Cursor(System.AppDomain.CurrentDomain.BaseDirectory + "/curFile.cur");
-            this.Cursor = cur;
-
-            cfgOpt.read();
-
-           
+            cfgOpt.read();       
         }
 
 
