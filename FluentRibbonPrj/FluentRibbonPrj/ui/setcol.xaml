@@ -6,6 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FluentRibbonPrj.ui"
         mc:Ignorable="d"
+        Cursor="/FluentRibbonPrj;component/Resource/curFile.cur"
         Title="" Height="230" Width="250" ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>

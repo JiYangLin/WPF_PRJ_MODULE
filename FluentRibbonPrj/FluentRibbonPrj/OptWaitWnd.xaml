@@ -6,6 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
        Title="" Height="200" Width="400"
+       Cursor="/FluentRibbonPrj;component/Resource/curFile.cur"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
     <Grid>

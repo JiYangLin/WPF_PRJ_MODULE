@@ -18,9 +18,6 @@ namespace FluentRibbonPrj.ui
 
             namecol.Text = cfgOpt.namecol.ToString();
             agecol.Text = cfgOpt.agecol.ToString();
-
-            Cursor cur = new Cursor(System.AppDomain.CurrentDomain.BaseDirectory + "/curFile.cur");
-            this.Cursor = cur;
         }
 
         private void SetConfirm_Click(object sender, RoutedEventArgs e)
