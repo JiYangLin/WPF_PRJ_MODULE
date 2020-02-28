@@ -62,7 +62,10 @@ namespace FluentRibbonPrj
                 catch (Exception ex)
                 {
                     MyLogger.logger.Warn(ex.ToString());
-                    OptWaitWnd wnd = new OptWaitWnd("", ex.ToString());
+                    this.Dispatcher.Invoke(()=> {
+                        OptWaitWnd wnd = new OptWaitWnd("", ex.ToString());
+                        wnd.ShowDialog();
+                    });
                     wnd.ShowDialog();
                     m_runing.Reset();
                 }
