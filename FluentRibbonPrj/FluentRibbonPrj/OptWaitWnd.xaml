@@ -16,7 +16,7 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <Canvas Grid.Row="1">
-            <Label FontSize="20" Name="inf" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+            <TextBlock Name="inf" TextWrapping="Wrap" TextAlignment="Center"></TextBlock>
         </Canvas>
         <StackPanel Grid.Row="2" Name="btnSp" Orientation="Horizontal" HorizontalAlignment="Right">
             <Fluent:Button Margin="30 0 0 0 "  Header="确定"  Icon="/FluentRibbonPrj;component/Resource/open.png" LargeIcon="/FluentRibbonPrj;component/Resource/open.png" x:Name="Confirm" Click="Confirm_Click" Width="80"/>

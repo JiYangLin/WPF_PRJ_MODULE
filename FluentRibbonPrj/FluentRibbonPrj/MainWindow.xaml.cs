@@ -66,7 +66,6 @@ namespace FluentRibbonPrj
                         OptWaitWnd wnd = new OptWaitWnd("", ex.ToString());
                         wnd.ShowDialog();
                     });
-                    wnd.ShowDialog();
                     m_runing.Reset();
                 }
             });
@@ -80,7 +79,6 @@ namespace FluentRibbonPrj
         private void StartPrj_Click(object sender, RoutedEventArgs e)
         {
             if (isRunning()) return;
-
 
             SourceList.DataContext = null;
             ObservableCollection<Dat> dat = new ObservableCollection<Dat>();

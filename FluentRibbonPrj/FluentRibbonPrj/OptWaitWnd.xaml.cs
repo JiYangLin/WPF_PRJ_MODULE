@@ -20,19 +20,20 @@ namespace FluentRibbonPrj
     /// </summary>
     public partial class OptWaitWnd
     {
-        public OptWaitWnd(string title, string str,bool showBtn = false)
+        public bool showBtn{get;set;}
+        public bool DisableAnimate { get; set; }
+        public OptWaitWnd(string title, string str)
         {
             InitializeComponent();
             this.Title = title;
-            inf.Content = str;
-
+            inf.Text = str;
             this.Loaded += OptPromtWnd_Loaded;
-            if (!showBtn) btnSp.Visibility = Visibility.Hidden;
         }
 
         private void OptPromtWnd_Loaded(object sender, RoutedEventArgs e)
         {
-            Run();
+            if (!DisableAnimate) Run();
+            if (!showBtn) btnSp.Visibility = Visibility.Hidden;
         }
 
         void Run()
