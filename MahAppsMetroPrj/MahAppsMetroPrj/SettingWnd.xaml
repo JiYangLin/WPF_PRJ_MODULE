@@ -27,12 +27,17 @@
         </StackPanel>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 25 0 10">
-            <Button  Grid.Column="0"  Name="setConfirm" Click="SetConfirm_Click"   >
+          
+            <Button   Name="setConfirm" Click="SetConfirm_Click"   >
                 <iconPacks:PackIconModern Width="80"  Height="22"  Kind="Check" />
             </Button>
-            <Button  Grid.Column="1" Name="cancel" Click="Cancel_Click"  Margin="10 0 0 0" >
+            
+            <Button Name="cancel" Click="Cancel_Click"  Margin="10 0 0 0" >
                 <iconPacks:PackIconModern Width="80"  Height="22"  Kind="Cancel" />
             </Button>
+            
+            <Button   Content="确定"   Style="{DynamicResource MahApps.Styles.Button.AccentedSquare}"></Button>
+            <Button   Content="取消"  Style="{DynamicResource MahApps.Styles.Button.Square}"></Button>
         </StackPanel>
 
     </Grid>
