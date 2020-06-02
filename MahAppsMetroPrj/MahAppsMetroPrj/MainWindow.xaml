@@ -1,65 +1,63 @@
 ﻿<Controls:MetroWindow x:Class="MahAppsMetroPrj.MainWindow"
-                      
-       xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-       xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
-                      
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MahAppsMetroPrj"
         mc:Ignorable="d"
-        Icon="res/mark.ico"  
-        Cursor="res/curFile.cur"
-        WindowState="Maximized"
-        Height="450" Width="800">
-
+                      
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"  
+        xmlns:Theme="clr-namespace:Theme"    
+                 
+        xmlns:StarSkyNS="clr-namespace:StarSkyNS"
+                      
+        Title="" Height="450" Width="800" WindowState="Maximized">
+    
     <Controls:MetroWindow.LeftWindowCommands >
-        <Controls:WindowCommands ShowLastSeparator="False">
-            <Button  ToolTip="设置" Name="SettingBtn" Click="settingBtn_Click">
-                <iconPacks:PackIconModern Width="22"  Height="22"  Kind="Settings" />
-            </Button>
+        <Controls:WindowCommands ShowLastSeparator="True">
+            <Button  ToolTip="返回首页" Content="返回首页" Name="HomeBtn" Click="HomeBtn_Click"/>
         </Controls:WindowCommands>
     </Controls:MetroWindow.LeftWindowCommands>
 
-    <Controls:MetroWindow.RightWindowCommands >
-        <Controls:WindowCommands ShowLastSeparator="False">
-            <Button  Content="帮助" ToolTip="帮助" Name="helpBtn" Click="helpBtn_Click"/>
-        </Controls:WindowCommands>
-    </Controls:MetroWindow.RightWindowCommands>
-
+    
     <Controls:MetroWindow.Flyouts>
         <Controls:FlyoutsControl>
+            <Controls:Flyout x:Name="FtTips"
+                             Theme="Adapt"
+                             Width="400"
+                             Header="提示"
+                             Position="Left"
+                             CloseButtonIsCancel="True">
+                <TextBlock Name="FtTips_Content"  TextWrapping="Wrap" Text="" HorizontalAlignment="Center" Width="350"/>
+            </Controls:Flyout>
             <Controls:Flyout x:Name="FtThemeSetting"
-                             Width="500"
+                             Theme="Adapt"
+                             Width="400"
                              AnimateOpacity="True"
                              CloseButtonIsCancel="True"
                              Header="主题设置"
-                             Position="Right">
-                <local:ThemeSetting/>
+                             Position="Left">
+                <Theme:ThemeSetting/>
             </Controls:Flyout>
         </Controls:FlyoutsControl>
     </Controls:MetroWindow.Flyouts>
-
+    
     <Grid>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-            <Controls:MetroAnimatedSingleRowTabControl x:Name="MainTabControl" Grid.Row="0">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition Height="0"/>
-                    </Grid.RowDefinitions>
-                    <local:MenuRipple></local:MenuRipple>
-                </Grid>
-            </Controls:MetroAnimatedSingleRowTabControl>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
 
-            <StatusBar Grid.Row="2">
-                <StatusBarItem Content="JIYANGLIN" HorizontalAlignment="Right" MouseRightButtonDown="StatusBarItem_MouseRightButtonDown"></StatusBarItem>
-            </StatusBar>
+        <Grid Grid.Row="0">
+            <ContentPresenter Name="MainPage"/>
         </Grid>
+        <Grid Grid.Row="0">
+            <StarSkyNS:StarSky/>
+        </Grid>
+        
+        <StatusBar Grid.Row="1">
+            <StatusBarItem  ToolTip="" Content="" Name="infoshow"/>
+            <StatusBarItem Content="JiYangLin" HorizontalAlignment="Right" MouseRightButtonDown="StatusBarItem_MouseRightButtonDown"></StatusBarItem>
+        </StatusBar>
     </Grid>
 </Controls:MetroWindow>

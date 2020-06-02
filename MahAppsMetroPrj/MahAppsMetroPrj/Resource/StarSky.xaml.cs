@@ -16,7 +16,7 @@ namespace StarSkyNS
     /// </summary>
     public partial class StarSky : UserControl
     {
-        public static StarSky startObj = null;
+        public static StarSky starObj = null;
 
         public class StarInfo
         {
@@ -36,7 +36,7 @@ namespace StarSkyNS
         private StarInfo[] _stars;
 
         /// 星星个数
-        public int _starCount = 0;
+        public int _starCount = 10;
         /// 星星最小尺寸
         private  int _starSizeMin = 5;
         /// 星星最大尺寸
@@ -59,7 +59,7 @@ namespace StarSkyNS
         public StarSky()
         {
             InitializeComponent();
-            startObj = this;
+            starObj = this;
 
             CompositionTarget.Rendering += CompositionTarget_Rendering;
             this.Loaded += StarSky_Loaded;

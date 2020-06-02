@@ -1,27 +1,13 @@
-﻿using Comm;
-using MahApps.Metro;
+﻿using MahApps.Metro;
 using StarSkyNS;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
-namespace MahAppsMetroPrj
+namespace Theme
 {
     /// <summary>
     /// ThemeSetting.xaml 的交互逻辑
     /// </summary>
-    public partial class ThemeSetting : UserControl
+    public partial class ThemeSetting
     {
         public ThemeSetting()
         {
@@ -29,7 +15,6 @@ namespace MahAppsMetroPrj
             InitClr();
         }
 
-        #region 主题
         void InitClr()
         {
             foreach (var clr in ThemeManager.ColorSchemes)
@@ -57,37 +42,33 @@ namespace MahAppsMetroPrj
             ThemeManagerUsr.ChangeThemeBaseColor(System.Windows.Application.Current, ThemeManager.BaseColorLight);
 
         }
-        #endregion
 
 
         #region 装饰星星
         private void startNumSL_ValueChanged(object sender, System.Windows.RoutedPropertyChangedEventArgs<double> e)
         {
-            if (null == StarSky.startObj) return;
-            StarSky.startObj._starCount = (int)startNumSL.Value;
-            StarSky.startObj.Flush();
+            if (null == StarSky.starObj) return;
+            StarSky.starObj._starCount = (int)startNumSL.Value;
+            StarSky.starObj.Flush();
         }
         private void startSizeSL_ValueChanged(object sender, System.Windows.RoutedPropertyChangedEventArgs<double> e)
         {
-            if (null == StarSky.startObj) return;
-            StarSky.startObj._starSizeMax = (int)startSizeSL.Value;
-            StarSky.startObj.Flush();
+            if (null == StarSky.starObj) return;
+            StarSky.starObj._starSizeMax = (int)startSizeSL.Value;
+            StarSky.starObj.Flush();
         }
         private void startSpeedSL_ValueChanged(object sender, System.Windows.RoutedPropertyChangedEventArgs<double> e)
         {
-            if (null == StarSky.startObj) return;
-            StarSky.startObj._starVMax = (int)startSpeedSL.Value;
-            StarSky.startObj.Flush();
+            if (null == StarSky.starObj) return;
+            StarSky.starObj._starVMax = (int)startSpeedSL.Value;
+            StarSky.starObj.Flush();
         }
         private void startRotateSL_ValueChanged(object sender, System.Windows.RoutedPropertyChangedEventArgs<double> e)
         {
-            if (null == StarSky.startObj) return;
-            StarSky.startObj.SetRotateSpeed((int)startRotateSL.Value);
-            StarSky.startObj.Flush();
-
+            if (null == StarSky.starObj) return;
+            StarSky.starObj.SetRotateSpeed((int)startRotateSL.Value);
+            StarSky.starObj.Flush();
         }
-
-
         #endregion
     }
 }

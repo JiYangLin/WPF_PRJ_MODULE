@@ -3,7 +3,6 @@
 namespace MahAppsMetroPrj
 {
     using MahApps.Metro.Controls;
-    using StarSkyNS;
 
     public sealed partial class MenuRipple : UserControl
     {

@@ -7,8 +7,7 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:materialDesignConverters="clr-namespace:MaterialDesignThemes.Wpf.Converters;assembly=MaterialDesignThemes.Wpf"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:StarSkyNS="clr-namespace:StarSkyNS"
-              xmlns:local="clr-namespace:MahAppsMetroPrj"
+             xmlns:local="clr-namespace:MahAppsMetroPrj"
              d:DesignHeight="300"
              d:DesignWidth="400"
              mc:Ignorable="d">
@@ -214,7 +213,6 @@
                             <Grid Grid.Row="1">
                                 <ContentControl Content="{Binding Tag}" Focusable="False" />
                             </Grid>
-                            <StarSkyNS:StarSky Grid.Row="1"/>
                         </Grid>
                     </DataTemplate>
                 </Controls:HamburgerMenu.ContentTemplate>

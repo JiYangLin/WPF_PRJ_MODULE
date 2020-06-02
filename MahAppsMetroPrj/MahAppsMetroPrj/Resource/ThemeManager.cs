@@ -1,4 +1,4 @@
-﻿namespace Comm
+﻿namespace Theme
 {
     using System;
     using System.Collections;
