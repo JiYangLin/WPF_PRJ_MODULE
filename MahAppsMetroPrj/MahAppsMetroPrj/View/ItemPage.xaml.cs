@@ -24,5 +24,10 @@ namespace MahAppsMetroPrj
         {
             InitializeComponent();
         }
+
+        private void FunBtn_Click(object sender, RoutedEventArgs e)
+        {
+            DefFocusPos.Focus();
+        }
     }
 }

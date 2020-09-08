@@ -4,15 +4,74 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Controls:MetroAnimatedTabControl x:Name="MetroAnimatedTabControl">
-            <Controls:MetroTabItem Header="XX"  ScrollViewer.CanContentScroll="False" >
-                <Label>xxxx</Label>
+            <Controls:MetroTabItem Header="XX"  ScrollViewer.CanContentScroll="False" Controls:ControlsHelper.HeaderFontSize="16" >
+                
+                <Grid Height="150">
+
+                    <TabControl>
+
+                        <TabItem Header="GroupA"  Controls:ControlsHelper.HeaderFontSize="16">
+                            <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Auto">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label  Name="DefFocusPos" Focusable="True" Width="0"></Label>
+
+
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition />
+                                            <RowDefinition Height="30"/>
+                                        </Grid.RowDefinitions>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button  Name="FunBtn" ToolTip="funBtn" Width="75" Margin="5 5 5 5"  Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Click="FunBtn_Click">
+                                                <StackPanel>
+                                                    <Label Height="6"></Label>
+                                                    <iconPacks:Material Width="32"  Height="32"  Kind="OpenInNew" />
+                                                    <Label HorizontalContentAlignment="Center">aaa</Label>
+                                                </StackPanel>
+                                            </Button>
+                                            <Button  Name="FunBtn2" ToolTip="funBtn" Width="75" Margin="5 5 5 5" HorizontalContentAlignment="Center"  Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Click="FunBtn_Click">
+                                                <StackPanel>
+                                                    <Label Height="6"></Label>
+                                                    <iconPacks:Material Width="32"  Height="32"  Kind="OpenInNew" />
+                                                    <Label HorizontalContentAlignment="Center">bbb</Label>
+                                                </StackPanel>
+                                            </Button>
+                                        </StackPanel>
+
+                                        <Label Grid.Row="1" Content="ItemTypeName" HorizontalContentAlignment="Center"></Label>
+                                    </Grid>
+
+                                    <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="0,8" BorderBrush="LightGray" BorderThickness="1"/>
+
+
+                                </StackPanel>
+                            </ScrollViewer>
+                        </TabItem>
+
+
+
+                        <TabItem Header="GroupB"  Controls:ControlsHelper.HeaderFontSize="16">
+                            <StackPanel Orientation="Horizontal">
+
+                            </StackPanel>
+                        </TabItem>
+
+
+                    </TabControl>
+
+                </Grid>
+                
             </Controls:MetroTabItem>
+            
+            
+            
             <Controls:MetroTabItem Header="YY">
-                <Label>yyyy</Label>
+                <Button  Content="Fun2" Height="100" Width="200" Style="{DynamicResource MahApps.Styles.Button.AccentedSquare}"></Button>
             </Controls:MetroTabItem>
         </Controls:MetroAnimatedTabControl>
     </Grid>
